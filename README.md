@@ -9,6 +9,3 @@
 A web application using NodeJS, ExpressJS, MongoDB, and Vanilla JS that supports CRUD (Create, Read, Update, and Delete) functionality for a logistics company.
 
 <br />
-
-- Viewing only previously "liked" photos by toggling
-- A Rover, Camera, and Earth Date UI that allows users to pick and browse photos starting from a specific set of parameters
