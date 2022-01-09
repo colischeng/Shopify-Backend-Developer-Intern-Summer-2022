@@ -41,4 +41,13 @@ export const updateInventory = async (req, res) => {
 };
 
 // delete
-export const deleteInventory = async (req, res) => {};
+export const deleteInventory = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    await InventoryItem.findByIdAndRemove(id);
+    res.status(204).json(`Successfully deleted ${id}`);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
