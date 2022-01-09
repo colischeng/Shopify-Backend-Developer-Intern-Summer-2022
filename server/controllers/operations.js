@@ -24,7 +24,21 @@ export const getInventory = async (req, res) => {
 };
 
 // update
-export const updateInventory = async (req, res) => {};
+export const updateInventory = async (req, res) => {
+  const { id: _id } = req.params;
+  const item = req.body;
+
+  try {
+    const updatedItem = await InventoryItem.findByIdAndUpdate(
+      _id,
+      { ...item, _id },
+      { new: true }
+    );
+    res.status(200).json(updatedItem);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
 
 // delete
 export const deleteInventory = async (req, res) => {};

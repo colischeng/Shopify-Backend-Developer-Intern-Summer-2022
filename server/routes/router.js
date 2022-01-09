@@ -6,7 +6,7 @@ import {
   updateInventory,
   deleteInventory,
 } from "../controllers/operations.js";
-import { validateAdd } from "../middleware/middleware.js";
+import { validateBody } from "../middleware/middleware.js";
 
 const router = express.Router();
 
@@ -15,9 +15,9 @@ router.get("/", homeRoute);
 router.get("/update", updateRoute);
 
 // api
-router.post("/api/inventory", validateAdd, addInventory);
+router.post("/api/inventory", validateBody, addInventory);
 router.get("/api/inventory", getInventory);
-router.put("/api/inventory:id", updateInventory);
-router.delete("/api/inventory:id", deleteInventory);
+router.put("/api/inventory/:id", validateBody, updateInventory);
+router.delete("/api/inventory/:id", deleteInventory);
 
 export default router;
