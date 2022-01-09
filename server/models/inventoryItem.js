@@ -3,19 +3,19 @@ import mongoose from "mongoose";
 const inventorySchema = mongoose.Schema({
   id: {
     type: Number,
-    require: true,
+    required: true,
   },
   warehouse: {
     type: String,
-    require: true,
+    required: true,
   },
   weight: {
     type: Number,
-    require: true,
+    required: true,
   },
   category: {
     type: String,
-    require: true,
+    required: true,
   },
   date: {
     type: Date,
