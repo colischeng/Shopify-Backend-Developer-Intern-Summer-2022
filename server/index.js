@@ -3,11 +3,15 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 import { createRequire } from "module";
-const require = createRequire(import.meta.url);
 
+import readRoute from "./routes/read.js";
+
+const require = createRequire(import.meta.url);
 require("dotenv").config({ path: "../.env" });
 
 const app = express();
+
+app.use("/read", readRoute);
 
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
@@ -19,7 +23,7 @@ mongoose
   })
   .then(() => {
     app.listen(process.env.PORT, () =>
-      console.log(`Server running on port ${process.env.PORT}`)
+      console.log(`Server running on port http://localhost:${process.env.PORT}`)
     );
   })
   .catch((error) => {
