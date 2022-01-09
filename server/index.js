@@ -4,16 +4,15 @@ import mongoose from "mongoose";
 import cors from "cors";
 import { createRequire } from "module";
 
-import readRoute from "./routes/read.js";
+import route from "./routes/router.js";
 
 const require = createRequire(import.meta.url);
 require("dotenv").config({ path: "../.env" });
 
 const app = express();
 
-app.use("/read", readRoute);
-
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+app.set("view engine", "ejs");
 app.use(cors());
 
 mongoose
@@ -22,10 +21,15 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    app.listen(process.env.PORT, () =>
-      console.log(`Server running on port http://localhost:${process.env.PORT}`)
-    );
+    app.listen(process.env.PORT, () => {
+      console.log(
+        `Server running on port http://localhost:${process.env.PORT}`
+      );
+      console.log("Connection to MongoDB successful");
+    });
   })
   .catch((error) => {
     console.log(error);
   });
+
+app.use("/", route);
