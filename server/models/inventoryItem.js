@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const inventorySchema = mongoose.Schema({
-  id: {
+  itemId: {
     type: Number,
     required: true,
   },
@@ -17,7 +17,7 @@ const inventorySchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  date: {
+  dateAdded: {
     type: Date,
     default: new Date(),
   },

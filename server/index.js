@@ -11,7 +11,8 @@ require("dotenv").config({ path: "../.env" });
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 app.set("view engine", "ejs");
 app.use(cors());
 
