@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopify Backend Intern Challenge 2022</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div>
+          <div>
+            <h1>Inventory Management System</h1>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!---->
+    <main>
+      <h3>Add Item</h3>
+      <div class="container">
+        <form>
+          <label for="id">ID</label><br />
+          <input type="text" /><br /><br />
+          <label for="warehouse">Warehouse</label><br />
+          <input type="text" /> <br /><br />
+          <label for="weight">Weight in Kilos</label><br />
+          <input type="number" /> <br /><br />
+          <label for="category">Category</label><br />
+          <input type="text" /> <br /><br />
+          <label for="Date">Date</label><br />
+          <input type="date" /> <br /><br />
+          <label for="description">Description</label><br />
+          <input type="text" /> <br /><br />
+        </form>
+        <div>
+          <a href="/post">
+            <span> Add Item </span>
+          </a>
+        </div>
+      </div>
+    </main>
+    <br />
+    <br />
+    <br />
+    <br />
+    <!---->
+    <form action="/" method="POST">
+      <h3>Inventory</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Warehouse</th>
+            <th>Weight in Kilos</th>
+            <th>Category</th>
+            <th>Date</th>
+            <th>Action</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1234</td>
+            <td>Biggest Warehouse</td>
+            <td>1000</td>
+            <td>Shoes</td>
+            <td>October 17, 2020</td>
+            <td>
+              <a href="#">Edit</a>
+              <a href="#">Delete</a>
+            </td>
+            <td>Shipment of Nike Shoes to Japan</td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </body>
+</html>
