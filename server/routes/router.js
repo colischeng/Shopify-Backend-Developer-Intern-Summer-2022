@@ -12,7 +12,7 @@ const router = express.Router();
 
 // views
 router.get("/", homeRoute);
-router.get("/update/:id", updateRoute);
+router.get("/update/:id/", updateRoute);
 
 // api
 router.post("/api/inventory", validateBody, addInventory);

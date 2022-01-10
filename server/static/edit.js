@@ -1,0 +1,29 @@
+const editButton = document.getElementById("edit-btn");
+
+editButton.addEventListener("click", async () => {
+  const itemId = document.getElementById("itemId").innerHTML;
+
+  const item = {
+    itemName: document.getElementById("editItemName").value,
+    warehouse: document.getElementById("editWarehouse").value,
+    weight: document.getElementById("editWeight").value,
+    category: document.getElementById("editCategory").value,
+    description: document.getElementById("editDescription").value,
+  };
+
+  await fetch(`/api/inventory/${itemId}`, {
+    method: "PUT",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(item),
+  }).then((res) => {
+    if (res.status < 400) {
+      alert("Edit was successful");
+      window.location.href = "http://localhost:3000/";
+    } else {
+      alert("Edit was unsuccessful please check fields and retry");
+    }
+  });
+});

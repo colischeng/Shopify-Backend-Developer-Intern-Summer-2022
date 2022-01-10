@@ -7,9 +7,6 @@ export const homeRoute = async (req, res) => {
       .then((response) => {
         res.render("index", { inventory: response.data });
         res.status(200);
-      })
-      .catch((error) => {
-        res.send(error);
       });
   } catch (error) {
     res.status(404).json({ message: error.message });
@@ -18,7 +15,7 @@ export const homeRoute = async (req, res) => {
 
 export const updateRoute = (req, res) => {
   try {
-    res.render("update");
+    res.render("update", { itemId: req.originalUrl.split("/")[2] });
     res.status(200);
   } catch (error) {
     res.status(404).json({ message: error.message });
