@@ -30,8 +30,7 @@
         <input id="addCategory" type="text" /> <br /><br />
         <label for="description">Description</label><br />
         <input id="addDescription" type="text" /> <br /><br />
-
-        <button id="submit-btn">Add Item</button>
+        <button id="add-btn">Add Item</button>
         <script type="module" src="static/add.js"></script>
       </div>
     </main>
@@ -58,7 +57,7 @@
           <% for(let i = 0; i < inventory.length; i++) {%>
           <tr>
             <td>
-              <a href="/update">Edit</a>
+              <a href=<%=`/update/${inventory[i]._id}`%>>Edit</a>
               <a href="#">Delete</a>
             </td>
             <td><%=inventory[i].itemName%></td>

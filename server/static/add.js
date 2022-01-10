@@ -1,4 +1,4 @@
-const addButton = document.getElementById("submit-btn");
+const addButton = document.getElementById("add-btn");
 
 addButton.addEventListener("click", async () => {
   const item = {
