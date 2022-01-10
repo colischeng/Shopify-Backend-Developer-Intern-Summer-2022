@@ -10,11 +10,12 @@ const require = createRequire(import.meta.url);
 require("dotenv").config({ path: "../.env" });
 
 const app = express();
+app.use(cors());
 
+app.use("/static", express.static("./static/"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.set("view engine", "ejs");
-app.use(cors());
 
 mongoose
   .connect(process.env.CONNECTION_URL, {
