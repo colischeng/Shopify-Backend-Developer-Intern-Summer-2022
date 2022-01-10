@@ -21,7 +21,7 @@
       <h3>Add Item</h3>
       <div class="container">
         <form>
-          <label for="id">ID</label><br />
+          <label for="id">Item Name</label><br />
           <input type="text" /><br /><br />
           <label for="warehouse">Warehouse</label><br />
           <input type="text" /> <br /><br />
@@ -46,31 +46,33 @@
     <!---->
     <form action="/" method="POST">
       <h3>Inventory</h3>
-      <table>
+      <table style="border-spacing: 10px">
         <thead>
           <tr>
-            <th>ID</th>
+            <th>Item Name</th>
             <th>Warehouse</th>
             <th>Weight in Kilos</th>
             <th>Category</th>
-            <th>Date Added</th>
+            <th>Date Updated</th>
             <th>Action</th>
             <th>Description</th>
           </tr>
         </thead>
         <tbody>
+          <% for(let i = 0; i < inventory.length; i++) {%>
           <tr>
-            <td>1234</td>
-            <td>Biggest Warehouse</td>
-            <td>1000</td>
-            <td>Shoes</td>
-            <td>October 17, 2020</td>
+            <td><%=inventory[i].itemName%></td>
+            <td><%=inventory[i].warehouse%></td>
+            <td><%=inventory[i].weight%></td>
+            <td><%=inventory[i].category%></td>
+            <td><%=inventory[i].dateAdded%></td>
             <td>
               <a href="/update">Edit</a>
               <a href="#">Delete</a>
             </td>
-            <td>Shipment of Nike Shoes to Japan</td>
+            <td><%=inventory[i].description%></td>
           </tr>
+          <%}%>
         </tbody>
       </table>
     </form>
