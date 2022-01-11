@@ -58,7 +58,7 @@
           <tr>
             <td>
               <a href=<%=`/update/${inventory[i]._id}`%>>Edit</a>
-              <a href="#">Delete</a>
+              <a href="#" class="delete" id=<%=inventory[i]._id%>>Delete</a>
             </td>
             <td><%=inventory[i].itemName%></td>
             <td><%=inventory[i].warehouse%></td>
@@ -69,6 +69,7 @@
           </tr>
           <%}%>
         </tbody>
+        <script type="module" src="static/delete.js"></script>
       </table>
     </form>
   </body>
