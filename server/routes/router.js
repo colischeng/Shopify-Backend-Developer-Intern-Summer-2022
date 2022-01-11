@@ -5,6 +5,7 @@ import {
   getInventory,
   updateInventory,
   deleteInventory,
+  downloadInventory,
 } from "../controllers/operations.js";
 import { validateBody } from "../middleware/middleware.js";
 
@@ -19,5 +20,6 @@ router.post("/api/inventory", validateBody, addInventory);
 router.get("/api/inventory", getInventory);
 router.put("/api/inventory/:id", validateBody, updateInventory);
 router.delete("/api/inventory/:id", deleteInventory);
+router.get("/api/download", downloadInventory);
 
 export default router;

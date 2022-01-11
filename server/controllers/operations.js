@@ -1,3 +1,5 @@
+import { Parser } from "json2csv";
+import * as fs from "fs";
 import InventoryItem from "../models/inventoryItem.js";
 
 // create
@@ -49,5 +51,26 @@ export const deleteInventory = async (req, res) => {
     res.status(204).json(`Successfully deleted ${id}`);
   } catch (error) {
     res.status(404).json({ message: error.message });
+  }
+};
+
+// download
+export const downloadInventory = async (req, res) => {
+  try {
+    const inventoryItems = await InventoryItem.find();
+    const fields = Object.keys(InventoryItem.schema.paths);
+    const json2csvParser = new Parser({ fields });
+    const csv = json2csvParser.parse(inventoryItems);
+    fs.writeFile("inventory.csv", csv, (error) => {
+      if (error) throw error;
+      console.log("Write to inventory.csv successfully!");
+    });
+    res.set({
+      "Content-Disposition": "attachment; filename=inventory.csv",
+      "Content-Type": "text/csv",
+    });
+    res.status(200).send(csv);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
   }
 };
