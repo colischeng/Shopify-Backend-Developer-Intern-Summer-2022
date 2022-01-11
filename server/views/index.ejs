@@ -41,11 +41,9 @@
     <!---->
     <form>
       <h3>Inventory</h3>
-      <button>
       <a href="/api/download" id="download">
-        Download to CSV
+        Download to CSV</button>
       </a>
-    </button>
       <table border="1" , style="border-spacing: 10px">
         <thead>
           <tr>
@@ -62,12 +60,8 @@
           <% for(let i = 0; i < inventory.length; i++) {%>
           <tr>
             <td>
-              <button>
-                <a href=<%=`/update/${inventory[i]._id}`%>>Edit</a>
-              </button>
-              <button>
-                <a href="#" class="delete" id=<%=inventory[i]._id%>>Delete</a>
-              </button>              
+              <a href=<%=`/update/${inventory[i]._id}`%>>Edit</a>
+              <a href="#" class="delete" id=<%=inventory[i]._id%>>Delete</a>
             </td>
             <td><%=inventory[i].itemName%></td>
             <td><%=inventory[i].warehouse%></td>
