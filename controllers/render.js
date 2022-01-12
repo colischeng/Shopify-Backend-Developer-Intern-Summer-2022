@@ -3,7 +3,7 @@ import axios from "axios";
 export const homeRoute = async (req, res) => {
   try {
     await axios
-      .get(`https://shopify-2022-backend-intern.herokuapp.com//api/inventory`)
+      .get(`https://shopify-2022-backend-intern.herokuapp.com/api/inventory`)
       .then((response) => {
         res.render("index", { inventory: response.data });
         res.status(200);
