@@ -4,6 +4,7 @@ const PORT = process.env.PORT || "http://localhost:3000";
 
 export const homeRoute = async (req, res) => {
   try {
+    console.log(PORT);
     await axios.get(`${PORT}/api/inventory`).then((response) => {
       res.render("index", { inventory: response.data });
       res.status(200);
