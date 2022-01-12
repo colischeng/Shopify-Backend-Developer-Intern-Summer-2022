@@ -15,7 +15,7 @@ export const addInventory = async (req, res) => {
   }
 };
 
-// read
+// read all
 export const getInventory = async (req, res) => {
   try {
     const inventoryItems = await InventoryItem.find();
@@ -49,6 +49,18 @@ export const deleteInventory = async (req, res) => {
   try {
     await InventoryItem.findByIdAndRemove(id);
     res.status(204).json(`Successfully deleted ${id}`);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
+
+// read single
+export const getSingleInventory = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const inventoryItems = await InventoryItem.findById(id);
+    res.status(200).json(inventoryItems);
   } catch (error) {
     res.status(404).json({ message: error.message });
   }

@@ -11,6 +11,10 @@ editButton.addEventListener("click", async () => {
     description: document.getElementById("editDescription").value,
   };
 
+  Object.keys(item).forEach(
+    (k) => !item[k] && item[k] !== undefined && delete item[k]
+  );
+
   await fetch(`/api/inventory/${itemId}`, {
     method: "PUT",
     headers: {

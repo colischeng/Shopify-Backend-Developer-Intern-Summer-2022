@@ -9,3 +9,6 @@
 A web application using NodeJS, ExpressJS, MongoDB, and Vanilla JS that supports CRUD (Create, Read, Update, and Delete) functionality for a logistics company.
 
 <br />
+Additionally, this application is able to perform the following additional feature:
+
+- Push a button export product data to a CSV
