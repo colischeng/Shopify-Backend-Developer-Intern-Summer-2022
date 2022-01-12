@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const PORT = process.env.PORT || "http://localhost:3000";
+console.log(PORT);
 
 export const homeRoute = async (req, res) => {
   try {
