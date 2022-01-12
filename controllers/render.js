@@ -1,14 +1,13 @@
 import axios from "axios";
 
-const PORT = process.env.PORT || "http://localhost:3000";
-
 export const homeRoute = async (req, res) => {
-  console.log(`${PORT}/api/inventory`);
   try {
-    await axios.get(`${PORT}/api/inventory`).then((response) => {
-      res.render("index", { inventory: response.data });
-      res.status(200);
-    });
+    await axios
+      .get(`https://shopify-2022-backend-intern.herokuapp.com//api/inventory`)
+      .then((response) => {
+        res.render("index", { inventory: response.data });
+        res.status(200);
+      });
   } catch (error) {
     res.status(404).json({ message: error.message });
   }

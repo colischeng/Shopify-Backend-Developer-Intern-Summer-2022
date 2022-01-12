@@ -9,8 +9,7 @@ for (let i = 0; i < deleteButtons.length; i++) {
     }).then((res) => {
       if (res.status < 400) {
         alert("Delete was successful");
-        const PORT = process.env.PORT || "http://localhost:3000";
-        window.location.href = `${PORT}`;
+        window.location.href = `https://shopify-2022-backend-intern.herokuapp.com/`;
       } else {
         alert("Delete was unsuccessful please retry");
       }
