@@ -2,7 +2,7 @@
 
 [Link to technical requirements](https://docs.google.com/document/d/1SSGX4y3vQUV3jLH-CY1kjEtV3eOeZrKPX5anSEyP4T8/edit)
 
-[Link to application]
+[Link to application](https://shopify-2022-backend-intern.herokuapp.com/)
 
 <br />
 
