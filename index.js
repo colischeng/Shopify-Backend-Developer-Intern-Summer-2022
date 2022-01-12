@@ -7,7 +7,7 @@ import { createRequire } from "module";
 import route from "./routes/router.js";
 
 const require = createRequire(import.meta.url);
-require("dotenv").config({ path: "../.env" });
+require("dotenv").config({ path: "./.env" });
 
 const app = express();
 app.use(cors());
@@ -23,10 +23,8 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    app.listen(process.env.PORT, () => {
-      console.log(
-        `Server running on port http://localhost:${process.env.PORT}`
-      );
+    app.listen(process.env.PORT || 3000, () => {
+      console.log(`Server running`);
       console.log("Connection to MongoDB successful");
     });
   })
