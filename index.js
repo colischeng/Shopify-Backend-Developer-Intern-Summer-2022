@@ -17,14 +17,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.set("view engine", "ejs");
 
+const PORT = process.env.PORT || 3000;
+
 mongoose
   .connect(process.env.CONNECTION_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => {
-    app.listen(process.env.PORT || 3000, () => {
-      console.log(`Server running`);
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
       console.log("Connection to MongoDB successful");
     });
   })

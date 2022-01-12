@@ -9,7 +9,8 @@ for (let i = 0; i < deleteButtons.length; i++) {
     }).then((res) => {
       if (res.status < 400) {
         alert("Delete was successful");
-        window.location.href = "http://localhost:3000/";
+        const PORT = process.env.PORT || "http://localhost:3000";
+        window.location.href = `${PORT}`;
       } else {
         alert("Delete was unsuccessful please retry");
       }

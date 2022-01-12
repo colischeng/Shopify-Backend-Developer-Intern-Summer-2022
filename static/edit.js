@@ -25,7 +25,8 @@ editButton.addEventListener("click", async () => {
   }).then((res) => {
     if (res.status < 400) {
       alert("Edit was successful");
-      window.location.href = "http://localhost:3000/";
+      const PORT = process.env.PORT || "http://localhost:3000";
+      window.location.href = `${PORT}`;
     } else {
       alert("Edit was unsuccessful please check fields and retry");
     }
