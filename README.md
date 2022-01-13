@@ -29,9 +29,10 @@ On the live demo, a MongoDB database is already connected because Heroku lets yo
 
 ![](images/environment_setup.jpg)
 
-Once that is all set up, simply start the program by running the following script.
+Once that is all set up, simply start the program by running the following scripts.
 
 ```
+npm install
 npm start
 ```
 
