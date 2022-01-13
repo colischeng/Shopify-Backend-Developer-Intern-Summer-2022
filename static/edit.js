@@ -25,9 +25,9 @@ editButton.addEventListener("click", async () => {
   }).then((res) => {
     if (res.status < 400) {
       alert("Edit was successful");
-      window.location.href = `https://shopify-2022-backend-intern.herokuapp.com/`;
     } else {
       alert("Edit was unsuccessful please check fields and retry");
     }
+    window.location = document.referrer;
   });
 });

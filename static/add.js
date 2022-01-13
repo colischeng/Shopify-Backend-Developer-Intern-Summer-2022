@@ -19,9 +19,9 @@ addButton.addEventListener("click", async () => {
   }).then((res) => {
     if (res.status < 400) {
       alert("Add was successful");
-      location.reload();
     } else {
       alert("Add was unsuccessful please check fields and retry");
     }
+    location.reload();
   });
 });
